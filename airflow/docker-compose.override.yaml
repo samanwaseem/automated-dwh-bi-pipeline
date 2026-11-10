@@ -1,0 +1,13 @@
+services:
+  staging-db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: dwh_user
+      POSTGRES_PASSWORD: dwh_pass
+      POSTGRES_DB: staging
+    ports:
+      - "5433:5432"
+    volumes:
+      - staging-db-volume:/var/lib/postgresql/data
+volumes:
+  staging-db-volume:

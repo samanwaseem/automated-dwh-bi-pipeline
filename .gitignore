@@ -1,0 +1,6 @@
+data/
+*.csv
+warehouse.duckdb
+__pycache__/
+airflow/logs/
+airflow/.env
