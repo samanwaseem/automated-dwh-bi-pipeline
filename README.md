@@ -5,6 +5,9 @@ End-to-end automated data warehousing and BI pipeline for pharmaceutical supply 
 - Saman Waseem 29258
 - Zara Asim 29262
 
+## Video Demo
+https://drive.google.com/drive/folders/1UyIjCLCTfldWQToPTt-oCqf0j8ERv4tm
+
 ## How To Run
 
 ### Prerequisites
