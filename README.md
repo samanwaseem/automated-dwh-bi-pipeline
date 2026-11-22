@@ -14,9 +14,9 @@ End-to-end automated data warehousing and BI pipeline for pharmaceutical supply 
 
 ---
 
-### Step 1: Clone the Repository
+### Step 1: Clone the Repository or Download as a ZIP File and Extract to Folder
 ```bash
-git clone <YOUR_GITHUB_REPO_URL>
+git clone <https://github.com/samanwaseem/automated-dwh-bi-pipeline>
 cd automated-dwh-bi-pipeline
 ```
 
