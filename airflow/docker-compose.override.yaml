@@ -24,5 +24,35 @@ services:
     volumes:
       - ..:/opt/airflow/project
 
+  superset:
+    image: apache/superset:latest
+    ports:
+      - "8088:8088"
+    environment:
+      SUPERSET_SECRET_KEY: "pharma-sdi-superset-secret-key-2024"
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: admin
+      ADMIN_FIRST_NAME: Admin
+      ADMIN_LAST_NAME: User
+      ADMIN_EMAIL: admin@superset.local
+    depends_on:
+      - staging-db
+    volumes:
+      - superset-home:/app/superset_home
+    entrypoint: >
+      /bin/sh -c "
+        pip install psycopg2-binary &&
+        superset db upgrade &&
+        superset fab create-admin
+          --username admin
+          --firstname Admin
+          --lastname User
+          --email admin@superset.local
+          --password admin || true &&
+        superset init &&
+        superset run -h 0.0.0.0 -p 8088 --with-threads
+      "
+
 volumes:
   staging-db-volume:
+  superset-home:
